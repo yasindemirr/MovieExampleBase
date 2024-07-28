@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MoviesBaseExample</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    ///Hatalar
+    <string name="http_error_message_unknown">Tanımlanamayan bir hata oluştu. Lütfen tekrar deneyiniz.</string>
+    <string name="http_error_message_server">Server hatası. Lütfen tekrar deneyiniz.</string>
+    <string name="http_error_message_server_unavailable">Servera ulaşılamıyor. Tekrar deneyiniz.</string>
+    <string name="http_error_message_network">Bağlantı hatası.\nİnternet bağlantınız olmadığı için servisle iletişim kurulamadı. Lütfen tekrar deneyiniz.</string>
+    <string name="http_error_message_auth">Yetkilendirme hatası. Lütfen tekrar deneyiniz. Sorun çözülmezse, uygulamaya tekrar giriş yapınız.</string>
+    <string name="http_error_message_method_not_allowed">Http method hatası. Method not allowed </string>
+    <string name="http_error_message_timeout">İstek zaman aşımına uğradı. Tekrar deneyiniz.</string>
+    <string name="http_error_message_parsing">Cevabın ayıklanmasında sorun oluştu. Lütfen tekrar deneyiniz.</string>
+</resources>
