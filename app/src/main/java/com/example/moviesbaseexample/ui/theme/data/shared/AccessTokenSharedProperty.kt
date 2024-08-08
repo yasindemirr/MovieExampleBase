@@ -13,5 +13,5 @@ class AccessTokenSharedProperty @Inject constructor(
 
     override fun getValue() : String? = getStringValue()
 
-    override fun getKey() = "ACCESS_TOKEN"
+    override fun getKey() = "ID"
 }

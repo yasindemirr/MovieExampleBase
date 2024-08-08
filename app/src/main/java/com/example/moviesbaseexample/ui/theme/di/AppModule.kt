@@ -3,6 +3,7 @@ package com.example.moviesbaseexample.ui.theme.di
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.moviesbaseexample.ui.theme.data.shared.AccessTokenSharedProperty
+import com.example.moviesbaseexample.ui.theme.datastore.SessionIdDataStoreManager
 import com.example.moviesbaseexample.ui.theme.util.SessionManager
 import dagger.Module
 import dagger.Provides
@@ -31,4 +32,13 @@ object AppModule {
     @Provides
     fun provideSessionManager(shared: AccessTokenSharedProperty) =
         SessionManager(shared)
+
+    @Provides
+    @Singleton
+    fun provideApplicationContext(@ApplicationContext context: Context): Context = context
+
+    @Singleton
+    @Provides
+    fun provideSessionIdManager(context : Context) =
+        SessionIdDataStoreManager(context)
 }

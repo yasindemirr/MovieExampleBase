@@ -14,14 +14,10 @@ class AuthInterceptor @Inject constructor(
 
         val requestBuilder = chain.request().newBuilder()
 
-        // If token has been saved, add it to the request
-     sessionManager.getToken()?.let { token ->
-
             requestBuilder.apply {
                 addHeader("accept", "application/json")
                 addHeader("Authorization", "Bearer" +BuildConfig.ACCES_TOKEN)
             }
-       }
 
         return chain.proceed(requestBuilder.build())
     }

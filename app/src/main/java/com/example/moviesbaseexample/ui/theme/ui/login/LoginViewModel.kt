@@ -1,9 +1,9 @@
 package com.example.moviesbaseexample.ui.theme.ui.login
 
 import androidx.lifecycle.viewModelScope
+import com.example.moviesbaseexample.ui.theme.data.model.CreateSession
 import com.example.moviesbaseexample.ui.theme.data.repository.Auth.AuthRepositoryImpl
 import com.example.moviesbaseexample.ui.theme.ui.base.BaseViewModel
-import com.example.moviesbaseexample.ui.theme.util.dataresource.RepoResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -19,7 +19,12 @@ class LoginViewModel @Inject constructor(
 
     override fun handleEvents(event : AuthEvent) {
         when (event) {
-            is AuthEvent.CreateRequestToken -> createToken()
+            is AuthEvent.ClickLoginButton ->{
+                createToken()
+            }
+            is AuthEvent.ApplyToken->  applyToken(event.model)
+
+            is AuthEvent.IdCreated-> takeSessionId(event.requestToken)
         }
 
     }
@@ -31,15 +36,42 @@ class LoginViewModel @Inject constructor(
                 .onSuccess {
                     setState {
                         copy(
-                            isLoading = false,
                             requestToken = it.requestToken
                         )
                     }
+                    setEvent(AuthEvent.ApplyToken(CreateSession(state.value.userName, state.value.password, it.requestToken)))
+                }
+                .onResponed {
+                    setState {
+                        copy(isLoading = false)
+                    }
+                }
+        }
+    }
+    private fun applyToken(model:CreateSession) {
+        setState { copy(isLoading = isLoading) }
+        viewModelScope.launch {
+            authRepository.getId(model)
+                .onSuccess {
+                   setEvent(AuthEvent.IdCreated(it.requestToken))
+                }
+                .onResponed {
+                    setState {
+                        copy(isLoading = false)
+                    }
+                }
+        }
+    }
+    private fun takeSessionId(requestToken:String?) {
+        setState { copy(isLoading = true) }
+        viewModelScope.launch {
+            authRepository.getSessionId(requestToken)
+                .onSuccess {
                     setEffect {
-                        AuthEffect.NavigateToHome
+                        AuthEffect.SaveToShared(it.sessionId)
                     }
                     setEffect {
-                        AuthEffect.SaveToShared(it.requestToken)
+                        AuthEffect.NavigateToHome
                     }
                 }
                 .onResponed {
@@ -49,22 +81,31 @@ class LoginViewModel @Inject constructor(
                 }
         }
     }
+    fun checkUserNameAndPassword():Boolean{
+        val currentSate=state.value
+       return currentSate.password.isNotEmpty() && currentSate.userName.isNotEmpty()
+    }
 
 }
 sealed interface AuthEvent {
-    object CreateRequestToken : AuthEvent
+    object ClickLoginButton : AuthEvent
+    data class ApplyToken(val model : CreateSession) : AuthEvent
+    data class IdCreated(val requestToken: String?) : AuthEvent
 }
 
 sealed interface AuthEffect {
     object NavigateToHome : AuthEffect
-    data class SaveToShared(val requestToken : String?):AuthEffect
+    data class SaveToShared(val id : String?):AuthEffect
 }
 
 data class AuthState(
     val isLoading: Boolean = false,
     val requestToken: String? = null,
-    val sessionId: String? = null,
+    var userName:String="",
+    var password:String="",
+    val id : String?=null
 )
+
 
 
 

@@ -118,6 +118,16 @@ dependencies {
     //viewBinding
     implementation("com.github.hoc081098:ViewBindingDelegate:1.4.0")
 
+    //Circular image - profile photo
+    implementation ("com.mikhaellopez:circularimageview:4.3.1")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+    ///// Serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+
+    ///// Datastore
+    implementation ("androidx.datastore:datastore-preferences:1.1.1")
+
 
 }
 kapt {

@@ -7,4 +7,14 @@
         <item name="colorOnPrimary">@color/teal_200</item>
     </style>
 
+    <style name="Theme_Dialog" parent="android:Theme.Holo.Dialog">
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+        <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
+    </style>
+    <style name="PauseDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/enter_from_right</item>
+        <item name="android:windowExitAnimation">@anim/exit_to_right</item>
+    </style>
+
 </resources>

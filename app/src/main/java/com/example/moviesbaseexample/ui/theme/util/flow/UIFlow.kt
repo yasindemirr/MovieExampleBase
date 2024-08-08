@@ -7,6 +7,7 @@ interface UIFlow {
      *
      */
     fun setCollectEffects()
+    fun setCollectStates()
 
     /**
      * view lara ait listener olacaksa örneğin [View.OnClickListener] bu metot içinde verilmeli
@@ -18,5 +19,5 @@ interface UIFlow {
      * uygulama içi statik değerlerin set edilmesi, o yüzden viewmodel e gerek yok
      */
     fun setInitialData()
-
+    fun initText()
 }

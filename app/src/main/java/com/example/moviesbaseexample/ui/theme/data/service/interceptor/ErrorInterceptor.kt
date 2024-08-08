@@ -1,7 +1,5 @@
 package com.example.moviesbaseexample.ui.theme.data.service.interceptor
 
-import com.example.moviesbaseexample.ui.theme.data.model.base.ErrorResponse
-import com.google.gson.Gson
 import okhttp3.Interceptor
 import okhttp3.Response
 import javax.inject.Inject

@@ -10,8 +10,10 @@ abstract class BaseFragment(contentLayoutId : Int):Fragment(contentLayoutId),UIF
     override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setInitialData()
+        initText()
         setCollectEffects()
         setViewListeners()
+        setCollectStates()
     }
 
 

@@ -22,3 +22,18 @@ class ExampleInstrumentedTest {
         assertEquals("com.example.moviesbaseexample", appContext.packageName)
     }
 }
+class FormatSocialStatusUseCase {
+    fun execute(followerCount: Long): String {
+        if (followerCount<1_000_000) return followerCount.toString()
+
+        val suffix= when{
+            followerCount>=1000->"M"
+            else->"K"
+        }
+        return when(followerCount){
+            in 1_000 until 999_999-> String.format("%.1f%s",followerCount/1000, suffix)
+            else->""
+        }
+
+    }
+}

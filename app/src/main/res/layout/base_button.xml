@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/dimen10"
+    android:paddingEnd="@dimen/dimen10"
+    tools:background="@drawable/radius_10_purple_button_bg">
+
+    <ImageView
+        android:id="@+id/imageView_buttonIcon"
+        android:layout_width="@dimen/dimen30"
+        android:layout_height="@dimen/dimen30"
+        android:layout_marginEnd="@dimen/dimen10"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/textView_buttonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen15sp"
+        tools:text="BUTTON TEXT" />
+
+</LinearLayout>

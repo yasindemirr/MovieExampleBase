@@ -25,7 +25,6 @@ class SessionManager @Inject constructor(
     fun getToken() : String? = accessTokenSharedProperty.getValue()
 
     fun hasSession() : Boolean {
-        println(getToken())
 
         return getToken() != null
     }

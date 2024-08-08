@@ -1,6 +1,5 @@
 package com.example.moviesbaseexample.ui.theme.util.dataresource
 
-import com.example.moviesbaseexample.ui.theme.data.model.base.ErrorResponse
 
 sealed class RepoResult<out T> {
     data class Success<out T>(val data: T) : RepoResult<T>()

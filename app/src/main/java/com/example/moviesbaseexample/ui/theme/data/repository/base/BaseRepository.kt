@@ -1,7 +1,5 @@
 package com.example.moviesbaseexample.ui.theme.data.repository.base
 
-import android.util.Log
-import com.example.moviesbaseexample.ui.theme.data.model.base.ErrorResponse
 import com.example.moviesbaseexample.ui.theme.data.service.interceptor.ErrorEvent
 import com.example.moviesbaseexample.ui.theme.data.service.interceptor.ErrorTypes
 import com.example.moviesbaseexample.ui.theme.util.dataresource.RepoResult
@@ -24,10 +22,6 @@ abstract class BaseRepository {
                         is JsonSyntaxException    -> ErrorEvent.errorEvent.postValue(ErrorTypes.ParsingErrorTypes)
                         is SocketTimeoutException -> ErrorEvent.errorEvent.postValue(ErrorTypes.TimeoutErrorTypes)
                         is UnknownHostException   -> ErrorEvent.errorEvent.postValue(ErrorTypes.NoNetworkErrorTypes)
-                        else -> {
-                            ErrorEvent.errorEvent.postValue(ErrorTypes.HoustonWeHaveAProblemErrorTypes())
-                        }
-
                     }
                 }
                 RepoResult.Error(e)

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center_vertical"
     tools:context=".ui.theme.ui.login.LoginFragment">
@@ -15,7 +16,7 @@
         android:layout_margin="15dp"
         android:text="Ad" />
     <EditText
-        android:id="@+id/login_name_tv"
+        android:id="@+id/login_user_name_et"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="10dp"
         android:layout_height="wrap_content"
@@ -29,25 +30,26 @@
         android:layout_margin="15dp"
         android:text="Soyad" />
     <EditText
-        android:id="@+id/login_surname_tv"
+        android:id="@+id/login_password_et"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="10dp"
         android:layout_height="wrap_content"
         >
     </EditText>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.example.moviesbaseexample.ui.theme.compenent.MovieButton
         android:id="@+id/login_button_button"
         android:layout_width="match_parent"
-        android:background="@color/material_dynamic_primary50"
         android:layout_margin="10dp"
         android:padding="10dp"
-        android:textAllCaps="false"
-        android:text="Üye Ol"
-        android:textColor="@color/white"
+        style="@style/Movie_Button"
+        app:buttonType="FILLED"
+        app:buttonTextSize="@dimen/dimen20sp"
+        app:buttonText="GİRİŞ YAP"
+        app:buttonIcon="@drawable/baseline_login_24"
         android:gravity="center"
-        android:layout_height="wrap_content">
+        android:layout_height="@dimen/dimen44">
 
-    </androidx.appcompat.widget.AppCompatButton>
+    </com.example.moviesbaseexample.ui.theme.compenent.MovieButton>
 
 </LinearLayout>
