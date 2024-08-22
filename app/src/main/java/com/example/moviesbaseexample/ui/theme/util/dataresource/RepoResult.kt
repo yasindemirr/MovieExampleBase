@@ -15,4 +15,20 @@ sealed class RepoResult<out T> {
     suspend fun onResponed(responsedHandler : suspend ()->Unit):RepoResult<T> =this.also{
         if (this is Success || this is Error) responsedHandler()
     }
+
+    suspend fun <T : Any, N : Any> RepoResult<T>.transformData(data: suspend (T) -> N): RepoResult<N> {
+        return when (this) {
+            is Success -> {
+                try {
+                    Success(data(this.data))
+                } catch (e: Exception) {
+                   Error(e)
+                }
+            }
+
+            is Error -> Error(this.error)
+
+            else ->  None
+        }
+    }
 }

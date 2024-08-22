@@ -19,6 +19,27 @@
         <attr name="buttonTextColorSelector" format="reference" />
 
     </declare-styleable>
+    <declare-styleable name="MovieEditText">
+        <attr name="editType" format="enum" >
+            <enum name="Text" value="1" />
+            <enum name="Search" value="2" />
+            <enum name="Password" value="3" />
+            <enum name="DecimalNumber" value="4" />
+        </attr>
+        <attr name="inputLimit" format="integer" />
+        <attr name="title" format="string|reference" />
+        <attr name="disableErrorMessage" format="boolean" />
+        <attr name="hint" format="string" />
+
+
+    </declare-styleable>
+
+    <declare-styleable name="MovieToolBar">
+        <attr name="header" format="string" />
+        <attr name="leftIconVisibility" format="boolean" />
+
+
+    </declare-styleable>
 
 
 </resources>

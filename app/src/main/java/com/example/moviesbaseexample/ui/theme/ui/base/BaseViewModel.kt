@@ -2,15 +2,18 @@ package com.example.moviesbaseexample.ui.theme.ui.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
-abstract class BaseViewModel<Event, State, Effect> : ViewModel() {
+abstract class BaseViewModel<Event, State, Effect,W> : ViewModel() {
 
     private val defaultState: State by lazy { setInitialState() }
 
@@ -22,6 +25,10 @@ abstract class BaseViewModel<Event, State, Effect> : ViewModel() {
 
     private val _effect: MutableSharedFlow<Effect> = MutableSharedFlow()
     val effect: SharedFlow<Effect> = _effect.asSharedFlow()
+
+    protected val _inputErrorChannel = Channel<W>()
+    val inputErrorChannel : Flow<W>
+        get() = _inputErrorChannel.receiveAsFlow()
 
     init {
         subscribeToEvents()

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bottom_sheet_rounded_corner"
+    tools:context=".ui.theme.ui.home.DetailBottomSheetFragment">
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/bottom_iv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen350"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/roundedCornersImageView"
+                android:foreground="@drawable/graident_back"
+                tools:src="@mipmap/ic_launcher"
+                android:scaleType="fitXY">
+
+            </ImageView>
+
+            <LinearLayout
+                android:id="@+id/rating_bar_layour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/bottom_iv"
+                android:orientation="horizontal">
+                <RatingBar
+                    android:id="@+id/ratingbar"
+                    android:layout_width="wrap_content"
+
+                    android:progressTint="@color/rating_bar_color"
+
+                    android:layout_height="wrap_content">
+
+                </RatingBar>
+                <TextView
+                    android:id="@+id/vote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/hind_bold"
+                    android:textSize="@dimen/dimen20sp"
+                    tools:text="5.4">
+
+                </TextView>
+            </LinearLayout>
+
+
+
+
+            <TextView
+                android:id="@+id/overView"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/rating_bar_layour"
+                tools:text="fnjkdsfsdfdsfsndfnjlsdjlnfsdjlnfjlnsdkfklnsd"
+                android:layout_marginHorizontal="@dimen/dimen15"
+                android:layout_marginTop="@dimen/dimen20"
+                android:fontFamily="@font/hind_regular"
+                android:textSize="@dimen/dimen16"
+                android:layout_height="wrap_content"
+                tools:ignore="SpUsage">
+
+            </TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>
+</LinearLayout>

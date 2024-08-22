@@ -35,40 +35,58 @@ class MainActivity : AppCompatActivity() {
 
     private  var navController: NavController?=null
     override fun onCreate(savedInstanceState : Bundle?) {
+
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
+
         navControllers()
+
         showErrorsMessage()
 
 
     }
     private fun showErrorsMessage(){
         errorHandler=HttpErrorHandler(this)
+
         ErrorEvent.errorEvent.observe(this){errorType->
+
             this.showDialog(
                 icon = R.drawable.baseline_warning_24,
+
                 title =getString(R.string.dialog_error_base_title),
+
                 positiveButtonText = getString(R.string.dialog_tek_buton_text),
+
                 description =errorHandler.handle(errorType),
+
                 positiveButtonAction = {
+
                         dialog ->   dialog.dismiss()
                 }
             )
         }
     }
     private fun navControllers(){
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+
         navController = navHostFragment.navController
+
         val navGraph = navController!!.navInflater.inflate(R.navigation.nav_graph)
+
         lifecycleScope.launch {
-            println(sessionManager.get())
+
             val startDestination = if (sessionManager.get().isNullOrEmpty()) {
+
                 R.id.loginFragment
+
             } else {
-                R.id.homeFragment
+
+                R.id.homeParentFragment
             }
+
             navGraph.setStartDestination(startDestination)
+
             navController!!.graph = navGraph
         }
 

@@ -94,6 +94,9 @@ dependencies {
 
     //hılt
     implementation("com.google.dagger:hilt-android:2.44")
+    implementation("androidx.paging:paging-common-android:3.3.2")
+    implementation("androidx.paging:paging-runtime-ktx:3.3.2")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
 
     //Navigation
@@ -127,6 +130,9 @@ dependencies {
 
     ///// Datastore
     implementation ("androidx.datastore:datastore-preferences:1.1.1")
+    //Glide
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
 
 
 }

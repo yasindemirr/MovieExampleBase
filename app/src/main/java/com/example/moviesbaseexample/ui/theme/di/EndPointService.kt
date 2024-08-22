@@ -17,13 +17,14 @@ object EndPointService{
 
     @Provides
     @Singleton
-    fun provideParameterServiceEndpoints(
+    fun provideParameterServiceAuthEndpoints(
        retrofit : Retrofit
     ) : Services.Auth = retrofit.create(Services.Auth::class.java)
 
     @Provides
-    fun provideAnalysisRepository(
-        analysisApiService: Services.Auth,
-    ) = AuthRepositoryImpl(analysisApiService)
+    @Singleton
+    fun provideParameterServiceHomeEndpoints(
+        retrofit : Retrofit
+    ) : Services.Home = retrofit.create(Services.Home::class.java)
 
 }

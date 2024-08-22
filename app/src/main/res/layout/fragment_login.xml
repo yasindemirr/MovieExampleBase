@@ -7,49 +7,51 @@
     android:orientation="vertical"
     android:gravity="center_vertical"
     tools:context=".ui.theme.ui.login.LoginFragment">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_margin="15dp"
-        android:text="Ad" />
-    <EditText
-        android:id="@+id/login_user_name_et"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="10dp"
         android:layout_height="wrap_content"
-        >
-    </EditText>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_margin="15dp"
-        android:text="Soyad" />
-    <EditText
-        android:id="@+id/login_password_et"
-        android:layout_width="match_parent"
-        android:layout_marginHorizontal="10dp"
-        android:layout_height="wrap_content"
-        >
-    </EditText>
+        android:background="@drawable/radius_20_white_bg"
+        android:layout_marginHorizontal="@dimen/dimen16"
+        android:elevation="@dimen/dimen10"
+        android:padding="@dimen/dimen20"
+        android:orientation="vertical">
+        <com.example.moviesbaseexample.ui.theme.component.MovieEditText
+            android:id="@+id/login_user_name_et"
+            android:layout_width="match_parent"
+            app:title="Kullanıcı Adı"
+            app:editType="Text"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen16"
+            >
+        </com.example.moviesbaseexample.ui.theme.component.MovieEditText>
 
-    <com.example.moviesbaseexample.ui.theme.compenent.MovieButton
-        android:id="@+id/login_button_button"
-        android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        style="@style/Movie_Button"
-        app:buttonType="FILLED"
-        app:buttonTextSize="@dimen/dimen20sp"
-        app:buttonText="GİRİŞ YAP"
-        app:buttonIcon="@drawable/baseline_login_24"
-        android:gravity="center"
-        android:layout_height="@dimen/dimen44">
+        <com.example.moviesbaseexample.ui.theme.component.MovieEditText
+            android:id="@+id/login_password_et"
+            android:layout_width="match_parent"
+            app:title="Password"
+            app:editType="Password"
+            android:layout_marginBottom="@dimen/dimen16"
+            android:layout_height="wrap_content"
+            >
+        </com.example.moviesbaseexample.ui.theme.component.MovieEditText>
 
-    </com.example.moviesbaseexample.ui.theme.compenent.MovieButton>
+        <com.example.moviesbaseexample.ui.theme.component.MovieButton
+            android:id="@+id/login_button_button"
+            android:layout_width="match_parent"
+
+            android:padding="10dp"
+            style="@style/Movie_Button"
+            app:buttonType="FILLED"
+            app:buttonTextSize="@dimen/dimen20sp"
+            app:buttonText="GİRİŞ YAP"
+            app:buttonIcon="@drawable/baseline_login_24"
+
+            android:gravity="center"
+            android:layout_height="@dimen/dimen44">
+
+        </com.example.moviesbaseexample.ui.theme.component.MovieButton>
+    </LinearLayout>
+
+
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.moviesbaseexample.ui.theme.compenent
+package com.example.moviesbaseexample.ui.theme.component
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,9 +7,7 @@ import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.widget.LinearLayout
-import androidx.compose.ui.graphics.Color
 import com.example.moviesbaseexample.R
 import com.example.moviesbaseexample.databinding.BaseButtonBinding
 import com.example.moviesbaseexample.ui.theme.util.extensions.changeIconColor

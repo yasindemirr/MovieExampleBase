@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:saveEnabled="false">
+
+    <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/hind_semi_bold"
+            android:saveEnabled="false"
+             android:visibility="gone"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen17sp"
+            tools:text="Label text " />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen44"
+            android:background="@null"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:fontFamily="@font/hind_regular"
+            android:gravity="center_vertical|start"
+            android:paddingHorizontal="@dimen/dimen12"
+            app:layout_constraintStart_toEndOf="@id/left_icon"
+            app:layout_constraintEnd_toStartOf="@id/right_icon"
+            android:paddingVertical="@dimen/dimen3"
+            android:saveEnabled="false"
+            android:textColor="@color/edit_text_color"
+            android:textColorHint="@color/edit_text_hint_color" />
+        <ImageView
+            android:id="@+id/right_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="@dimen/dimen5"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@drawable/ic_close_eyes_monkey">
+        </ImageView>
+        <ImageView
+            android:id="@+id/left_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/dimen5"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:src="@drawable/baseline_search_24">
+        </ImageView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/error_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="@dimen/dimen15"
+        android:layout_marginTop="@dimen/dimen10"
+        android:fontFamily="@font/hind_semi_bold"
+        android:text="Error"
+        android:textColor="@color/edit_text_error_red"
+        android:textSize="@dimen/dimen12sp"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/show_input_limit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:layout_marginHorizontal="@dimen/dimen15"
+        android:layout_marginTop="@dimen/dimen10"
+        android:fontFamily="@font/hind_semi_bold"
+        android:text="5/12"
+        android:textColor="@color/edit_text_error_red"
+        android:textSize="@dimen/dimen12sp"
+        android:visibility="gone" />
+</LinearLayout>
+
+</LinearLayout>

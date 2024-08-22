@@ -12,8 +12,8 @@
         tools:layout="@layout/fragment_login" >
     </fragment>
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.moviesbaseexample.ui.theme.ui.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/homeParentFragment"
+        android:name="com.example.moviesbaseexample.ui.theme.ui.home.HomeParentFragment"
+        android:label="fragment_home_parent"
+        tools:layout="@layout/fragment_home_parent" />
 </navigation>

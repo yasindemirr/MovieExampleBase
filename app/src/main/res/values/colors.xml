@@ -12,4 +12,19 @@
 
     <color name="movie_purple">#C3A9F1</color>
     <color name="movie_black">#121212</color>
+
+
+    ////Edittext//////////////
+    <color name="edit_text_color">#121212</color>
+    <color name="edit_text_hint_color">#615F5F</color>
+    <color name="edit_text_error_red">#B93232</color>
+    <color name="edit_text_succes_green">#80EC03</color>
+
+
+    ////RatingBarColor//////////
+
+    <color name="rating_bar_color">#DAB23C</color>
+
+
 </resources>
+

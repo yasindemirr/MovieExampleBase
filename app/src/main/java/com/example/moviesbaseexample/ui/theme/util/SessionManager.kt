@@ -14,7 +14,7 @@ class SessionManager @Inject constructor(
         if (accessToken != null) {
 
             accessTokenSharedProperty.saveValue(accessToken)
-            println(accessToken)
+          //  println(accessToken)
 
         } else {
 
